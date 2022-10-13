@@ -55,7 +55,7 @@ app.get("/callback", async (req, res) => { //spotify sends message back with cod
   const data = await response.json();
   global.access_token = data.access_token;
 
-  res.redirect("/dashboard");
+  res.redirect("/makePlaylist");
 });
 
 async function getData(endpoint) {
@@ -70,13 +70,13 @@ async function getData(endpoint) {
   return data;
 }
 
-app.get("/dashboard", async (req, res) => {
+app.get("/makePlaylist", async (req, res) => {
   const userInfo = await getData("/me");
   //const tracks = await getData("/me/tracks?limit=10");
   const topArtist = await getData("/me/top/artists?time_range=long_term&limit=15");
 
   //res.render("dashboard", { user: userInfo, tracks: tracks.items });
-  res.render("dashboard", { user: userInfo, artists: topArtist.items});
+  res.render("makePlaylist", { user: userInfo, artists: topArtist.items});
 });
 
 // app.get("/recommendations", async (req, res) => {
@@ -114,4 +114,5 @@ let listener = app.listen(3000, function () {
     "Your app is listening on http://localhost:" + listener.address().port
   );
 });
+
 

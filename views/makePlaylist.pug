@@ -1,0 +1,14 @@
+extends layout.pug
+    
+block content
+    h1 Welcome! #{user.id} ✨
+    .slidecontainer 
+        input#myRange.slider(type='range', min='1', max='100', value='50')
+    label(for='altrock')
+        input#altrock(type='checkbox', name='altrock', value='yes')
+        |   Altrock
+    script.
+      const cb = document.querySelector('#altrock');
+      console.log(cb.checked); // false
+
+    
