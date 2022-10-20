@@ -8,10 +8,12 @@ app.set("views", "./views");
 app.set("view engine", "pug");
 
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }))
 
 const redirect_uri = "http://localhost:3000/callback";
 const client_id = "b5b53e673bf34a2aa429b48736055bae";
 const client_secret = "c851b40319a142408dd5a29140aadc12";
+
 
 global.access_token;
 
@@ -78,6 +80,21 @@ app.get("/makePlaylist", async (req, res) => {
   //res.render("dashboard", { user: userInfo, tracks: tracks.items });
   res.render("makePlaylist", { user: userInfo, artists: topArtist.items});
 });
+
+app.post("/makePlaylist", async (req, res) => {
+  console.log(req.body.altrock)
+  const playlist = await getData("/recommendations?limit=10&market=ES&seed_genres=%2Chip-hop%2C" + req.body.altrock);
+  
+
+  res.render("playlist", { songs: playlist.tracks});
+});
+
+app.get("/playlist", async (req, res) => {
+  playlist = await getData("/recommendations?limit=10&market=ES&seed_genres=hip-hop");
+
+  res.render("playlist", { songs: playlist.tracks});
+  //how do i get the submit button to move to the next screen.
+})
 
 // app.get("/recommendations", async (req, res) => {
 //   const artist_id = req.query.artist;
