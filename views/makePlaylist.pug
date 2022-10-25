@@ -1,16 +1,110 @@
 extends layout.pug
     
 block content
-    h1 Welcome! #{user.id} ✨
-    .slidecontainer 
-        input#myRange.slider(type='range', min='1', max='100', value='50')
+    h1 Welcome! #{user.id} ✨ 😶
+    p Select 2-5 genres, and set the slide bar to your mood
+    
  
 
     form(action='/makePlaylist', method='POST')
         label(for='altrock')
             input#altrock(type='checkbox', name='altrock', value='alt-rock')
             |   Altrock
-        input(type='submit')
+        label(for='acoustic')
+            input#acoustic(type='checkbox', name='acoustic', value='acoustic')
+            |   Acoustic
+        label(for='blues')
+            input#blues(type='checkbox', name='blues', value='blues')
+            |   Blues
+        label(for='chill')
+            input#chill(type='checkbox', name='chill', value='chill')
+            |   Chill
+        label(for='country')
+            input#country(type='checkbox', name='country', value='country')
+            |   Country
+        label(for='dance')
+            input#dance(type='checkbox', name='dance', value='dance')
+            |   Dance
+        label(for='disco')
+            input#disco(type='checkbox', name='disco', value='disco')
+            |   Disco
+        label(for='dubstep')
+            input#dubstep(type='checkbox', name='dubstep', value='dubstep')
+            |   Dubstep
+        label(for='emo')
+            input#emo(type='checkbox', name='emo', value='emo')
+            |   Emo
+        label(for='funk')
+            input#funk(type='checkbox', name='funk', value='funk')
+            |   Funk
+        label(for='gospel')
+            input#gospel(type='checkbox', name='gospel', value='gospel')
+            |   Gospel
+        label(for='hipHop')
+            input#hipHop(type='checkbox', name='hipHop', value='hip-hop')
+            |   Hip-hop
+        label(for='jazz')
+            input#jazz(type='checkbox', name='jazz', value='jazz')
+            |   Jazz
+        label(for='metal')
+            input#metal(type='checkbox', name='metal', value='metal')
+            |   Metal
+        label(for='opera')
+            input#opera(type='checkbox', name='opera', value='opera')
+            |   Opera
+        label(for='party')
+            input#party(type='checkbox', name='party', value='party')
+            |   Party
+        label(for='piano')
+            input#piano(type='checkbox', name='piano', value='piano')
+            |   Piano
+        label(for='pop')
+            input#pop(type='checkbox', name='pop', value='pop')
+            |   Pop
+        label(for='punk')
+            input#punk(type='checkbox', name='punk', value='punk')
+            |   Punk
+        label(for='rnb')
+            input#rnb(type='checkbox', name='rnb', value='r-n-b')
+            |   R&B
+        label(for='reggae')
+            input#reggae(type='checkbox', name='reggae', value='reggae')
+            |   Reggae
+        label(for='rock')
+            input#rock(type='checkbox', name='rock', value='rock')
+            |   Rock
+        label(for='romance')
+            input#romance(type='checkbox', name='romance', value='romance')
+            |   Romance
+        label(for='sad')
+            input#sad(type='checkbox', name='sad', value='sad')
+            |   Sad
+        label(for='salsa')
+            input#salsa(type='checkbox', name='salsa', value='salsa')
+            |   Salsa
+        label(for='sleep')
+            input#sleep(type='checkbox', name='sleep', value='sleep')
+            |   Sleep
+        label(for='soul')
+            input#soul(type='checkbox', name='soul', value='soul')
+            |   Soul
+        label(for='study')
+            input#study(type='checkbox', name='study', value='study')
+            |   Study
+        label(for='workOut')
+            input#workOut(type='checkbox', name='workOut', value='work-out')
+            |   Work-out
+    label(for='danceability')
+        input#danceability(type='range', name='danceability', min='0', max='1', value='.50', step ='.01')
+        |   Danceability
+    label(for='loudness')
+        input#loudness(type='range', name='loudness', min='0', max='1', value='.50', step ='.01')
+        |   Loudness
+    label(for='popularity')
+        input#popularity(type='range', name = 'popularity', min='0', max='100', value='50', step ='1')
+        |   Popularity
+        
+    input(type='submit')
       
 
     

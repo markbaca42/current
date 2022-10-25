@@ -48,6 +48,7 @@ a.btn{
   transform: translate(-50%, -50%);
   color: white;
 }
-.top_row{
-  
+input[type=submit] {
+  background-color: #af0ce0;
 }
+
