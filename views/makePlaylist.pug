@@ -6,7 +6,7 @@ block content
     
  
 
-    form(action='/makePlaylist', method='POST')
+    form(action='/makePlaylist', method='POST', href = '/playlist')
         label(for='altrock')
             input#altrock(type='checkbox', name='altrock', value='alt-rock')
             |   Altrock
@@ -94,17 +94,17 @@ block content
         label(for='workOut')
             input#workOut(type='checkbox', name='workOut', value='work-out')
             |   Work-out
-    label(for='danceability')
-        input#danceability(type='range', name='danceability', min='0', max='1', value='.50', step ='.01')
-        |   Danceability
-    label(for='loudness')
-        input#loudness(type='range', name='loudness', min='0', max='1', value='.50', step ='.01')
-        |   Loudness
-    label(for='popularity')
-        input#popularity(type='range', name = 'popularity', min='0', max='100', value='50', step ='1')
-        |   Popularity
+        label(for='danceability')
+            input#danceability(type='range', name='danceability', min='0', max='1', value='.50', step ='.01')
+            |   Danceability
+        label(for='loudness')
+            input#loudness(type='range', name='loudness', min='0', max='1', value='.50', step ='.01')
+            |   Loudness
+        label(for='popularity')
+            input#popularity(type='range', name = 'popularity', min='0', max='100', value='50', step ='1')
+            |   Popularity
         
-    input(type='submit')
+        input(type='submit')
       
 
     

@@ -249,17 +249,16 @@ app.post("/makePlaylist", async (req, res) => {
 
   });
   
-  const playlist = await getData("/recommendations?" + params); //FIXME: Still not working, i DONT know why it work on spotify site maybe change this line
+  const playlist = await getData("/recommendations?" + params);
   //console.log(playlist);
-  res.render("playlist", { songs: playlist.tracks});
+  const userInfo = await getData("/me");
+  res.render("playlist", { user: userInfo, songs: playlist.tracks});
 });
 
 app.get("/playlist", async (req, res) => {
-  playlist = await getData("/recommendations?limit=10&market=ES&seed_genres=hip-hop");
-
-
-  res.render("playlist", { songs: playlist.tracks});
-  //how do i get the submit button to move to the next screen.
+  //FIXME: use my made playlist and add tracks to that. 
+  //I think I'll need some for loop maybe and a bunch of request for each track
+  // or i think i can put all the songs uris into an array and then use the array how i did for teh seed_genres. Then show a link to the playlist or find out how to show all songs in playlist.
 })
 
 // app.get("/recommendations", async (req, res) => {
